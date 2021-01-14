@@ -1,0 +1,39 @@
+<html>
+  <head></head>
+
+  <body>
+    
+    <header>
+      <h1>La view index! <!-- localhost:3000/posts/ --></h1>
+    </header>
+    
+<!-- AFFICHAGE DE TOUT LES POSTS -->
+    <% @posts.each do |post| %>
+    
+      <h2><%= post.author %></h2>
+      <p><%= post.content %></p>
+<!-- Créer les boutons avec liens de chaques posts et redirige le post choisi sur la page show -->
+      <p>
+        <a href="<%= post_path(post.id) %>" class="btn btn-primary">Lire la suite en cliquant ici!</a>
+      </p>
+<!-- Créer un bouton qui renvoye la view edit du post à éditer -->
+      <p>
+        <a href="<%= edit_post_path(post.id) %>" class="btn btn-warning">Editer</a>
+      </p>
+    
+<!-- Créer un bouton qui supprime  un post = avec un data-confirm pour confirmer cette action irréfutable + data-method="DELETE" pour supprimer, si click sur OK rediriger vers  la view du post en question http://localhost:3000/posts/12 -->
+      <p>
+        <a href="<%= post_path(post.id) %>" class="btn btn-danger" data-confirm="Êtes vous sûr ? Cette action est irréfutable et dans certain cas mortel ! :(" data-method="DELETE">Supprimer</a>
+      </p>
+    
+    <% end %>   
+    
+<!-- Créer une view qui permet de créer un nouveau post (créer un chemin avec la route new_post) http://localhost:3000/posts/new -->
+    <p>
+      <a href="<%= new_post_path %>" class="btn btn-success">Créer un post</a>
+    </p>
+    
+  </body>
+
+</html>
+

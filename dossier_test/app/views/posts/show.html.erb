@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+
+  <body>
+    
+    <header>
+      <h1>La view show! <!-- localhost:3000/posts/1 --></h1>
+    </header>
+    <br>
+    <h2><%= @post.author %></h2>
+    <br>
+    <p><%= @post.content %></p>
+    
+<!-- Lien pour revenir en arrière -->
+    <p><a href="<%= posts_path %>" class="btn btn-secondary">Lien pour revenir en arrière</a>
+    </p>
+    
+  </body>
+
+</html>

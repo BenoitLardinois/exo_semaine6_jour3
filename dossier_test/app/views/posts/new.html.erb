@@ -1,0 +1,39 @@
+<!-- On s'inspire de la view edit car c'est presque la même chose -->
+
+<html>
+  <head></head>
+
+  <body>
+    
+    <header>
+      <h1>La view new!</h1>
+    </header>
+    
+    <br>
+    
+    <p>Créer un Post</p>
+<!-- Pour que le formulaire marche il faut lui passer une antitée -->
+    <%= form_for @post do |f| %>
+      <div class="form-groupe">
+        <label>Auteur du post</label>
+<!-- Prend en paramètre l'attribut (:author) que je souhaite modifier -->
+        <%= f.text_field :author, class: 'form-control' %>
+      </div>
+    
+      <br>
+    
+      <div class="form-groupe">
+        <label>Contenu du post</label>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+    
+      <br>
+    
+      <div class="form-groupe">
+        <button type="submit" class="btn btn-primary">Valider la création du post</button>
+      </div>
+    <% end %>
+    
+  </body>
+
+</html>

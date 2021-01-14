@@ -1,0 +1,37 @@
+<html>
+  <head></head>
+
+  <body>
+    
+    <header>
+      <h1>La view edit! <!-- localhost:3000/posts/1/edit --></h1>
+    </header>
+    
+    <br>
+    
+    <p>Editer un Post</p>
+<!-- Pour générer les formulaires qui corresponde a un model en particulier il y a la méthode form_for permet de prendre en paramère l'enregistrement qu'on veut modifier, l'URL vers la quelle rediriger et ça prendra un block qui aura comme paramètre |f| (il permet de gérer les différents champs) -->
+    <%= form_for @post do |f| %>
+      <div class="form-groupe">
+        <label>Auteur du post</label>
+<!-- Prend en paramètre l'attribut (:author) que je souhaite modifier -->
+        <%= f.text_field :author, class: 'form-control' %>
+      </div>
+    
+      <br>
+    
+      <div class="form-groupe">
+        <label>Contenu du post</label>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+    
+      <br>
+    
+      <div class="form-groupe">
+        <button type="submit" class="btn btn-primary">Valider la modification du post</button>
+      </div>
+    <% end %>
+    
+  </body>
+
+</html>
